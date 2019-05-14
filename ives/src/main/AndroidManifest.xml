@@ -1,0 +1,25 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ives.cn" >
+    <application>
+
+        <!--禁止界面到设置界面-->
+        <activity
+            android:name="com.ives.cn.permission.AppSettingsDialogHolderActivity"
+            android:exported="false"
+            android:label=""
+            android:theme="@style/EasyPermissions.Transparent"/>
+
+        <!-- FileProvider配置访问路径，适配7.0及其以上 -->
+        <provider
+            android:name="com.ives.cn.view.CameraFileProvider"
+            android:authorities="com.ives.cn.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/camera_provider_paths"/>
+        </provider>
+
+
+    </application>
+</manifest>
