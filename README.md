@@ -7,8 +7,7 @@
 ### 4.  File 工具类
 ### 5.  待续。。。
 
-# 集成AS
-
+# 集成AS 
 > Step 1.先在 build.gradle(Project:XXXX) 的 repositories 添加:
 
 	allprojects {
@@ -20,10 +19,19 @@
 > Step 2. 然后在 build.gradle(Module:app) 的 dependencies 添加:
 
 	dependencies {
-	       //基础工具库
-            implementation 'com.github.zhangi789:XTool:1.0'
+	
+	       //没有兼容AndroudX        AS 3.1.2
+           implementation 'com.github.zhangi789:xtool-android:1.0'
+          
+           //兼容AndroudX  需要满足  AS 3.2  gradle 4.6以上
+           implementation 'com.github.zhangi789:xtool-androidx:2.0'
 	}
 	
+	> Step 3. 如果使用AndroidX，请在 gradle.properties 文件下添加:
+	          如果没用 不要添加
+              android.useAndroidX=true
+              android.enableJetifier=true
+
 ## 基础功能
 ##### 
 ```java
