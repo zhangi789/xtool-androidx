@@ -9,4 +9,5 @@ import androidx.core.content.FileProvider;
  * @describe 兼容Android 7.0  文件权限
  */
 public class CameraFileProvider extends FileProvider {
+
 }

@@ -33,7 +33,7 @@ public class CameraKit {
              */
             if (Build.VERSION.SDK_INT >= 24) {
                 //这里的BuildConfig，需要是程序包下BuildConfig。
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile(context.getApplicationContext(), "com.ives.cn.provider", new File(picturePath)));
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile(context.getApplicationContext(),  context.getPackageName()+".android.provider", new File(picturePath)));
                 intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
             } else {
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(picturePath)));
