@@ -29,6 +29,7 @@ public class CameraKit {
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             /**
              * 指定拍照存储路径
+             *
              * 7.0 及其以上使用FileProvider替换'file://'访问
              */
             if (Build.VERSION.SDK_INT >= 24) {
