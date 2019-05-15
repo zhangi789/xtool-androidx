@@ -29,7 +29,7 @@
            implementation 'com.github.zhangi789:xtool-android:1.0'
           
            //兼容AndroudX  需要满足  AS 3.2  gradle 4.6以上
-           implementation 'com.github.zhangi789:xtool-androidx:2.0'
+           implementation 'com.github.zhangi789:xtool-androidx:4.3.2'
 	}
 	
 	> Step 3. 如果使用AndroidX，请在 gradle.properties 文件下添加:
