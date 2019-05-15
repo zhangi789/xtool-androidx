@@ -1,11 +1,16 @@
 # XTool
 ## 个人收藏的Android常用工具类 兼容AndroidX。其主要功能有：
 
-### 1.  Android 6.0 权限封装
-### 2.  上传图片 图库和拍照返回Uri
-### 3.  Android倒计时
-### 4.  File 工具类
-### 5.  待续。。。
+### 1.   Android 6.0 权限封装
+### 2.   上传图片 图库和拍照返回Uri
+### 3.   Android倒计时
+### 4.   File 工具类
+### 5.   Log工具类
+### 6.   Toast工具类
+### 7.   Handler工具类
+### 8.   SharedPreferences工具类
+### 9.   加密工具类支持MD5和Base64
+### 10.  基础工具类
 
 # 集成AS 
 > Step 1.先在 build.gradle(Project:XXXX) 的 repositories 添加:
@@ -21,10 +26,10 @@
 	dependencies {
 	
 	       //没有兼容AndroudX        AS 3.1.2
-           implementation 'com.github.zhangi789:xtool-android:3.0'
+           implementation 'com.github.zhangi789:xtool-android:1.0'
           
            //兼容AndroudX  需要满足  AS 3.2  gradle 4.6以上
-           implementation 'com.github.zhangi789:xtool-androidx:4.0'
+           implementation 'com.github.zhangi789:xtool-androidx:2.0'
 	}
 	
 	> Step 3. 如果使用AndroidX，请在 gradle.properties 文件下添加:
@@ -235,6 +240,101 @@ String picturePath=  XTool.+XTool.getRealFilePathFromUri(Context context, Uri ur
 
 
 
+## Toast工具类
+#### 居中Toast
+XTool.showLongToast(Context context, String content);
 
 
 
+XTool.showShortToast(Context context, String content);
+```java	
+     XTool.showLongToast(this,"info");
+     
+     XTool.showShortToast(this,"info");
+
+```
+
+## Log工具类
+####   支持打印json   其他使用跟log一致
+ XTool.json(String tag, String message, boolean isOutputOriginalContent);
+```java	
+
+     XTool.json("GGG","json",false);
+     XTool.i("GGG","info");
+     XTool.d("GGG","info");
+     XTool.w("GGG","info");
+
+```
+
+
+## Handler工具类
+#### Handler 支持普通和延迟
+XTool.handleMsg(Handler mHandler, int what, Bundle data);
+     
+XTool.handleDelayedMsg(Handler mHandler, int what, long time, Bundle data);
+```java
+```
+
+
+
+
+## SharedPreferences工具类
+#### 使用方式一致 具体如下  支持
+
+```java
+        XTool.putString((Context context, String key, String value);
+        XTool.getString(Context context, String key, String defValue)
+        
+        XTool.putInt(Context context, String key, int value);
+        XTool.getInt(Context context, String key, int defValue)
+        
+        XTool.putBoolean(Context context, String key, boolean value);
+        XTool.getBoolean(Context context, String key, boolean defValue);
+        
+        XTool.putFloat(Context context, String key, float value);
+        XTool.getFloat(Context context, String key, float defValue)
+
+
+```
+
+
+## 加密工具类
+#### 支持MD5   Base64 编码和解码
+
+```java
+    //Base64解码
+     byte[] data =  XTool.base64Decode(String input)
+     byte[] data =  XTool.base64Decode(byte[] input)
+    
+    //Base64编码
+     byte[] data =  XTool.base64Encode(byte[] input);
+     byte[] data =  XTool.base64Encode(String input);
+     //Base64编码
+     String data =  XTool.base64Encode2String(byte[] input)
+     
+     //MD5加密
+     String data =  XTool.getMD5(String data);
+     String data =  XTool.getMD5(byte[] data);
+```
+
+## 基础工具类
+#### 功能 获得app相关信息 判断手机号，隐藏手机几位 
+```java
+      
+      XTool.getAppVersionCode(Context context);
+      XTool.getAppVersionName(Context context);
+      
+      XTool.isMobileNO(String mobiles);
+      XTool.hideMobilePhone4(String mobile_phone);
+      
+      XTool.isNotEmpty(String result);
+     
+      //byte[]   转化为16进制字符串
+      XTool.bytes2HexString(byte[] bytes)
+      
+      //16进制字符串   转化为byte[]
+      XTool.hexString2Bytes(String hexString);
+      
+      //获得系统当前事件 format="yyyy-MM-dd HH:mm:ss"  需自定义
+      XTool.getSysCurTime(String format);
+```
