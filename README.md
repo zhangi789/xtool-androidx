@@ -26,7 +26,7 @@
 	dependencies {
 	
 	       //没有兼容AndroudX        AS 3.1.2
-           implementation 'com.github.zhangi789:xtool-android:1.0'
+           implementation 'com.github.zhangi789:xtool-android:3.1.2'
           
            //兼容AndroudX  需要满足  AS 3.2  gradle 4.6以上
            implementation 'com.github.zhangi789:xtool-androidx:4.3.2'
@@ -335,6 +335,10 @@ XTool.handleDelayedMsg(Handler mHandler, int what, long time, Bundle data);
       //16进制字符串   转化为byte[]
       XTool.hexString2Bytes(String hexString);
       
-      //获得系统当前事件 format="yyyy-MM-dd HH:mm:ss"  需自定义
+      //获得系统当前时间 format="yyyy-MM-dd HH:mm:ss"  需自定义
       XTool.getSysCurTime(String format);
+      //dp2px
+      XTool.dp2px(Context context, float dpValue)
+                    
+      XTool.px2dp(Context context, float pxValue)
 ```
