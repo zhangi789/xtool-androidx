@@ -1,5 +1,7 @@
 package com.dnxc.cn;
 
+import com.ives.cn.XTool;
+
 /**
  * @author 张海洋
  * @Date on 2019/05/13.
@@ -7,4 +9,7 @@ package com.dnxc.cn;
  * @describe
  */
 public class CameraActivity2{
+
+
+
 }

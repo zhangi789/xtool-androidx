@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.ives.cn.XTool;
 import com.ives.cn.permission.AppSettingsDialog;
 import com.ives.cn.permission.EasyPermissions;
+import com.ives.cn.util.CameraKit;
 
 import java.io.File;
 import java.util.List;
@@ -34,9 +35,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     String[] perms = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     int flag = 1;
-
     File mFlie;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +45,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         mGalery = (Button) findViewById(R.id.mGalery);
         mGalery.setOnClickListener(this);
         mFlie = XTool.getFlie();
+        XTool.json("GGG","",false);
     }
 
     @Override

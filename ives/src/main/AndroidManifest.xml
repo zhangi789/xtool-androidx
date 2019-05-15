@@ -11,7 +11,6 @@
 
         <!-- FileProvider配置访问路径，适配7.0及其以上 -->
         <provider
-            
             android:name="com.ives.cn.view.CameraFileProvider"
             android:authorities="${applicationId}.android.provider"
             android:exported="false"

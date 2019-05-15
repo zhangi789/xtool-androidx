@@ -1,11 +1,14 @@
 package com.dnxc.cn;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
+import com.ives.cn.XTool;
 import com.ives.cn.time.CountDownTimerSupport;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTakePhot = (Button) findViewById(R.id.mTakePhoto);
         mTakePhot.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
