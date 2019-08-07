@@ -26,7 +26,7 @@
 	dependencies {
 	
 	       //没有兼容AndroudX        AS 3.1.2
-           implementation 'com.github.zhangi789:xtool-android:3.1.2'
+           implementation 'com.github.zhangi789:xtool-android:3.3.3'
           
            //兼容AndroudX  需要满足  AS 3.2  gradle 4.6以上
            implementation 'com.github.zhangi789:xtool-androidx:4.3.2'
@@ -342,3 +342,24 @@ XTool.handleDelayedMsg(Handler mHandler, int what, long time, Bundle data);
                     
       XTool.px2dp(Context context, float pxValue)
 ```
+## 自定义控件属性快捷获取
+#### 功能 
+```java
+     
+     XTool.getTypeArray(Context context, AttributeSet set, int[] attrs)
+    
+     XTool.optColor(TypedArray typedArray, int index, int def)
+     
+     XTool.optInt(TypedArray typedArray, int index, int def)
+    
+     XTool.optPixelSize(TypedArray typedArray, int index, float def);
+     
+     XTool.optPixelSize(TypedArray typedArray, int index, int  def);
+    
+     XTool.optBoolean(TypedArray typedArray, int index, boolean def)
+     
+     XTool.optString(TypedArray typedArray, int index)
+     
+```
+
+
